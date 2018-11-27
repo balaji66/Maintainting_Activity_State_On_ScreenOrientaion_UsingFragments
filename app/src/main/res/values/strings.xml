@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Maintainting_Activity_State_On_ScreenOrientaion_UsingFragments</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="countriesNames">
+        <item>India</item>
+        <item>China</item>
+        <item>Pakistan</item>
+        <item>Nepal</item>
+        <item>Bangladesh</item>
+        <item>Iran</item>
+        <item>Australia</item>
+        <item>Ireland</item>
+        <item>SriLanka</item>
+        <item>Korea</item>
+        <item>US</item>
+    </string-array>
+
+    <string name="India">About India</string>
+    <string name="China">About China</string>
+    <string name="Pakistan">About Pakistan</string>
+    <string name="Nepal">About Nepal</string>
+    <string name="Bangladesh">About Bangladesh</string>
+    <string name="Iran">About Iran</string>
+    <string name="Australia">About Australia</string>
+    <string name="Ireland">About Ireland</string>
+    <string name="SriLanka">About SriLanka</string>
+    <string name="Korea">About Korea</string>
+    <string name="US">About US</string>
+
+</resources>
