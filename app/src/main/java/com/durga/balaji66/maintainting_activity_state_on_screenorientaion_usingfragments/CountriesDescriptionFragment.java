@@ -2,9 +2,11 @@ package com.durga.balaji66.maintainting_activity_state_on_screenorientaion_using
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,8 +27,7 @@ public class CountriesDescriptionFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_countries_description, container, false);
         mCountryDescription =view.findViewById(R.id.countryDescription);
@@ -36,10 +37,24 @@ public class CountriesDescriptionFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Bundle bundle =getArguments();
-        countryName = bundle.getString(FragmentActionListener.KEY_SELECTED_COUNTRY,null);
-        countryDescription = getString(getStringId(countryName));
+        if(savedInstanceState!=null){
+            countryName = savedInstanceState.getString("selectedCountry",countryName);
+            countryDescription = getString(getStringId(countryName));
+            Log.i("Description","countryName save Instance state");
+        }else {
+            Bundle bundle = getArguments();
+            countryName = bundle.getString(FragmentActionListener.KEY_SELECTED_COUNTRY);
+            countryDescription = getString(getStringId(countryName));
+            Log.i("Description","countryName bundle");
+        }    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        //super.onSaveInstanceState(outState);
+        outState.putString("selectedCountry",countryName);
+        Log.i("countryName",countryName);
     }
+
 
     @Override
     public void onResume() {
