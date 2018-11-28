@@ -38,22 +38,20 @@ public class CountriesDescriptionFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         if(savedInstanceState!=null){
-            countryName = savedInstanceState.getString("selectedCountry",countryName);
+            countryName = savedInstanceState.getString("SelectedCountry",countryName);
             countryDescription = getString(getStringId(countryName));
-            Log.i("Description","countryName save Instance state");
         }else {
             Bundle bundle = getArguments();
-            countryName = bundle.getString(FragmentActionListener.KEY_SELECTED_COUNTRY);
+            countryName = bundle.getString(FragmentActionListener.KEY_SELECTED_COUNTRY,"India");
             countryDescription = getString(getStringId(countryName));
-            Log.i("Description","countryName bundle");
-        }    }
+        }   }
 
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        //super.onSaveInstanceState(outState);
-        outState.putString("selectedCountry",countryName);
-        Log.i("countryName",countryName);
-    }
+//    @Override
+//    public void onSaveInstanceState(@NonNull Bundle outState) {
+//        //super.onSaveInstanceState(outState);
+//        outState.putString("SelectedCountry",countryName);
+//        Log.i("countryName",countryName);
+//    }
 
 
     @Override
@@ -89,7 +87,8 @@ public class CountriesDescriptionFragment extends Fragment {
             case "US":
                 return R.string.US;
                 default:
+                    return R.string.India;
         }
-        return R.string.India;
+
     }
 }

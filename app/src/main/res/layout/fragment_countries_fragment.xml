@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="10dp"
     android:background="#ffaaaa"
-    tools:context=".Countries_fragment">
+    tools:context=".CountriesFragment">
 
     <ListView
         android:layout_width="match_parent"

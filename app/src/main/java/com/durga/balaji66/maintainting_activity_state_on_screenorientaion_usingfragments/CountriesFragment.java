@@ -22,12 +22,12 @@ import java.util.Objects;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Countries_fragment extends Fragment {
+public class CountriesFragment extends Fragment {
 
     View rootView;
     FragmentActionListener fragmentActionListener;
 
-    public Countries_fragment() {
+    public CountriesFragment() {
         // Required empty public constructor
     }
 
@@ -63,11 +63,11 @@ public class Countries_fragment extends Fragment {
         });
     }
 
-    @Override
-    public void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        Log.i("OrintationChange","CountriesFragment onSaveInstanceState");
-    }
+//    @Override
+//    public void onSaveInstanceState(@NonNull Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        Log.i("OrintationChange","CountriesFragment onSaveInstanceState");
+//    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
